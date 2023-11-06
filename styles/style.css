@@ -1,0 +1,86 @@
+:root {
+  --main: #ffaf18;
+  --logo-txt: #ffc468;
+  --nav-txt: #a46b00;
+  --hero-txt: #b99150;
+  --main-title: #bd985c;
+}
+
+@font-face {
+  font-family: Muller;
+  src: url('../assets/fonts/MullerExtraBold.woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Muller;
+  src: url('../assets/fonts/MullerBold.woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Muller;
+  src: url('../assets/fonts/MullerRegular.woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  font-family: Muller, Georgia, 'Times New Roman', Times, serif;
+  font-weight: 200;
+}
+
+header {
+  box-shadow: 0px 3px 7.5px rgba(120, 120, 120, 0.124);
+}
+
+nav {
+  height: 100px;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+}
+
+.logo__text {
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: var(--logo-txt);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--nav-txt);
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+}
