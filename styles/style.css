@@ -185,7 +185,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  box-shadow: 0px 3px 7.5px rgba(152,152,152,0.2);
+  box-shadow: 0px 3px 7.5px rgba(152, 152, 152, 0.2);
 }
 
 .card_logo {
@@ -216,6 +216,91 @@ main {
   background-color: var(--main);
 }
 
+/* Footer  */
+footer {
+  max-width: 1200px;
+  margin: 180px auto 106px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer__text {
+  width: 384px;
+  margin-right: auto;
+}
+
+.footer__text h2 {
+  margin-bottom: 84px;
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 800;
+  color: var(--main);
+}
+
+.footer__text h2 span {
+  color: var(--main-title);
+}
+
+.footer__text p {
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 200;
+  color: var(--hero-txt);
+}
+
+footer img {
+  transform: translateX(120px);
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  gap: 25px;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+footer form input,
+button {
+  width: 100%;
+  height: 60px;
+}
+
+footer form input {
+  border: 1px solid var(--main);
+  outline: none;
+  font-size: 18px;
+  line-height: 45px;
+  padding-left: 22px;
+}
+
+footer form input::placeholder {
+  color: var(--hero-txt);
+  opacity: 1;
+}
+
+footer form button {
+  border: none;
+  background-color: var(--main);
+  font-size: 16px;
+  line-height: 55px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1470px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  footer img {
+    transform: translateX(0px);
+    /* grid-column: 1 / 3; */
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .hero {
     flex-direction: column;
@@ -230,11 +315,28 @@ main {
   .products__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* gap: 24px; */
   }
 
   .products__cards_item {
     margin: auto;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer__text {
+    margin-right: 0;
+  }
+
+  footer img {
+    transform: translateX(0px);
   }
 
 }
