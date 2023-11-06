@@ -84,3 +84,84 @@ main {
   max-width: 1200px;
   margin: auto;
 }
+
+/* Hero section */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 142px;
+}
+
+.hero img {
+  height: 342px;
+  width: 512px;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.hero__text h1 {
+  color: var(--main-title);
+  font-size: 45px;
+  font-weight: 900;
+  line-height: 55px;
+}
+
+.hero__text h1 span {
+  color: var(--main);
+}
+
+.hero__favourites {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.hero__favourites_item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero__favourites_item_text h3 {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--main);
+}
+
+.hero__favourites_item_text p {
+  color: var(--main-title);
+  line-height: 16px;
+}
+
+.hero__favourites_item img {
+  height: 60px;
+  width: 60px;
+}
+
+.hero__text button {
+  height: 60px;
+  width: 224px;
+  border: none;
+  font-weight: 500;
+  background-color: var(--main);
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .hero img {
+    order: -1;
+  }
+}
