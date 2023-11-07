@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const pizza_data = [
     {
       imgSrc: "assets/images/pizzas/pizza1.png",
@@ -45,45 +45,75 @@
       description: "Сыр Джюгас, Сыр с плесенью, Сыр Моцарелла, Сыр секретный",
     },
   ];
-  
+
   function createProductList() {
     const productList = document.querySelector(".products__cards");
-  
+
     const list = pizza_data.map((pizza, index) => {
       const card = document.createElement("li");
       const logo = document.createElement("img");
       const title = document.createElement("p");
       const desc = document.createElement("p");
       const button = document.createElement("button");
-  
+
+      const fsImage = document.createElement("div");
+      const img = document.createElement("img");
+      img.src = pizza.imgSrc;
+      img.alt = `pizza${index}`;
+      fsImage.classList.add("card__image_fs");
+      fsImage.classList.add(`n${index}`);
+
       card.classList.add("products__cards_item");
-  
+
       logo.src = pizza.imgSrc;
       logo.alt = `pizza${index}`;
       logo.classList.add("card_logo");
-  
+      logo.classList.add(`n${index}`);
+
       title.textContent = pizza.title;
       title.classList.add("card_title");
-  
+
       desc.textContent = pizza.description;
       desc.classList.add("card_description");
-  
+
       button.textContent = "В корзину";
-  
+
       card.appendChild(logo);
       card.appendChild(title);
       card.appendChild(desc);
       card.appendChild(button);
-  
+
+      fsImage.appendChild(img);
+      card.appendChild(fsImage);
       return card;
     });
     productList.append(...list);
   }
-  
+
   document.addEventListener("DOMContentLoaded", () => {
     createProductList();
+    const productList = document.querySelector(".products__cards");
+
+    productList.addEventListener("click", (e) => {
+      if (e.target instanceof HTMLElement) {
+        if (e.target.classList.contains('card_logo')) {
+          const index = e.target.classList[1];
+          const fs = document.querySelector(`.card__image_fs.${index}`)
+          if (fs) {
+            fs.classList.add("active");
+            document.body.style.overflow = 'hidden'
+          }
+          return;
+        }
+        if (
+          e.target.classList[0] === "card__image_fs" &&
+          e.target.classList[2] === "active"
+        ) {
+          e.target.classList.remove("active");
+          document.body.style.overflow = 'visible'
+          return;
+        }
+      }
+    });
   });
-  
 })();
-
-
