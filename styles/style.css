@@ -1,5 +1,6 @@
 :root {
   --main: #ffaf18;
+  --main-hover: #c78a1a;
   --logo-txt: #ffc468;
   --nav-txt: #a46b00;
   --hero-txt: #b99150;
@@ -28,6 +29,11 @@
   font-weight: 200;
   font-style: normal;
 }
+
+button {
+  cursor: pointer;
+}
+
 
 body {
   font-family: Muller, Georgia, 'Times New Roman', Times, serif;
@@ -298,6 +304,11 @@ footer form button {
   font-size: 16px;
   line-height: 55px;
   font-weight: 500;
+}
+
+button:hover {
+  background-color: var(--main-hover);
+  color: white;
 }
 
 @media screen and (max-width: 1470px) {
