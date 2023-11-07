@@ -86,13 +86,13 @@
     </section>
     <form action="">
       <label for="id">
-        <input type="text" id="name" placeholder="Ваше имя">
+        <input type="text" id="name" placeholder="Ваше имя" required minlength="5" maxlength="30" pattern="^[^.]+$">
       </label>
       <label for="address">
-        <input type="text" id="address" placeholder="Адрес доставки">
+        <input type="text" id="address" placeholder="Адрес доставки" required minlength="5" maxlength="45" pattern="^[^.]+$">
       </label>
       <label for="phone">
-        <input type="text" id="phone" placeholder="Телефон">
+        <input type="text" id="phone" placeholder="Телефон" required minlength="5" maxlength="25" pattern="^(?!\.)\d*$">
       </label>
       <button type="submit">Оформить заказ</button>
     </form>
