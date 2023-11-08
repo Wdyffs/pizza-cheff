@@ -386,7 +386,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 870px) {
   footer {
     display: flex;
     flex-direction: column;

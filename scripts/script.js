@@ -50,7 +50,7 @@
     const productList = document.querySelector(".products__cards");
 
     const list = pizza_data.map((pizza, index) => {
-      const card = document.createElement("li");
+      const card = document.createElement("li");  
       const logo = document.createElement("img");
       const title = document.createElement("p");
       const desc = document.createElement("p");
