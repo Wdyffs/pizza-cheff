@@ -96,12 +96,12 @@
 
     productList.addEventListener("click", (e) => {
       if (e.target instanceof HTMLElement) {
-        if (e.target.classList.contains('card_logo')) {
+        if (e.target.classList.contains("card_logo")) {
           const index = e.target.classList[1];
-          const fs = document.querySelector(`.card__image_fs.${index}`)
+          const fs = document.querySelector(`.card__image_fs.${index}`);
           if (fs) {
             fs.classList.add("active");
-            document.body.style.overflow = 'hidden'
+            document.body.style.overflow = "hidden";
           }
           return;
         }
@@ -110,10 +110,37 @@
           e.target.classList[2] === "active"
         ) {
           e.target.classList.remove("active");
-          document.body.style.overflow = 'visible'
+          document.body.style.overflow = "visible";
           return;
         }
       }
     });
+
+    const form = document.forms.order;
+    if (form instanceof HTMLFormElement) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const elements = form.elements;
+        let data = {
+          name: elements.name.value,
+          address: elements.address.value,
+          phone: elements.phone.value
+        };
+        const submitBtn = document.querySelector('button[type="submit"]');
+        fetch('url', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).catch(e => {}).finally(res => {
+          const modal = document.querySelector('.footer__modal_success');
+          modal.classList.add('active');
+          setTimeout(() => {
+            modal.classList.remove('active');
+          }, 1000)
+        })
+      });
+    }
   });
 })();

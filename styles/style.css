@@ -329,6 +329,25 @@ footer form button {
   font-weight: 500;
 }
 
+.footer__modal_success {
+  display: none;
+  position: fixed;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  color: green;
+  font-size: 1.5rem;
+  border: 3px solid var(--main);
+  top: calc(50% - 50px);
+  left: calc(50% - 100px);
+}
+
+.footer__modal_success.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button:hover {
   background-color: var(--main-hover);
   color: white;
