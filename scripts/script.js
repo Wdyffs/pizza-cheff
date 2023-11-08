@@ -94,6 +94,11 @@
     createProductList();
     const productList = document.querySelector(".products__cards");
 
+    const choosePizzaBtn = document.querySelector(".hero__text button");
+    choosePizzaBtn.addEventListener("click", () => {
+      productList.scrollIntoView({ behavior: "smooth", block: "end" });
+    });
+
     productList.addEventListener("click", (e) => {
       if (e.target instanceof HTMLElement) {
         if (e.target.classList.contains("card_logo")) {
@@ -124,22 +129,24 @@
         let data = {
           name: elements.name.value,
           address: elements.address.value,
-          phone: elements.phone.value
+          phone: elements.phone.value,
         };
         const submitBtn = document.querySelector('button[type="submit"]');
-        fetch('url', {
-          method: 'POST',
+        fetch("url", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(data)
-        }).catch(e => {}).finally(res => {
-          const modal = document.querySelector('.footer__modal_success');
-          modal.classList.add('active');
-          setTimeout(() => {
-            modal.classList.remove('active');
-          }, 1000)
+          body: JSON.stringify(data),
         })
+          .catch((e) => {})
+          .finally((res) => {
+            const modal = document.querySelector(".footer__modal_success");
+            modal.classList.add("active");
+            setTimeout(() => {
+              modal.classList.remove("active");
+            }, 1000);
+          });
       });
     }
   });
