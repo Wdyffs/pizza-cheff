@@ -121,6 +121,13 @@
       }
     });
 
+    const nameInput = document.getElementById('name');
+    if (nameInput instanceof HTMLInputElement) {
+      nameInput.addEventListener('keydown', (e) => {
+        if (e.key === '.') e.preventDefault();
+      })
+    }
+
     const form = document.forms.order;
     if (form instanceof HTMLFormElement) {
       form.addEventListener("submit", (e) => {
@@ -131,7 +138,7 @@
           address: elements.address.value,
           phone: elements.phone.value,
         };
-        const submitBtn = document.querySelector('button[type="submit"]');
+
         fetch("url", {
           method: "POST",
           headers: {
